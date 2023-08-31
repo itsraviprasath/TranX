@@ -1,0 +1,29 @@
+#notFound {
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #2D3079;
+    border-radius: 10px;
+    padding: 100px;
+    color: #fff;
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    .yes {
+        margin-right: 10px;
+    }
+
+    a {
+        color: #b4732b;
+    }
+
+    a:hover {
+        color: #fff;
+    }
+}

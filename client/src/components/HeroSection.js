@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Image from "../assets/images/image.png";
+// import Image from "../assets/images/image.png";
 
 const HeroSection = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../assets/styles/components/GlobalNavbar.scss";
+import "../assets/styles/components/HomeNavbar.scss";
 import Logo from "../assets/images/logo.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -9,7 +9,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import { FiLogIn } from "react-icons/fi";
 
-const GlobalNavbar = () => {
+const HomeNavbar = () => {
   return (
     <>
       <Navbar expand="lg" className="nav">
@@ -23,11 +23,11 @@ const GlobalNavbar = () => {
               <Link className="nav-link" to="/home">
                 Home
               </Link>
-              <Link className="nav-link" to="/about">
-                About
+              <Link className="nav-link" to="/lend">
+                Lend
               </Link>
-              <Link className="nav-link" to="">
-                Invest
+              <Link className="nav-link" to="/borrow">
+                Borrow
               </Link>
               <NavDropdown
                 className="nav-link nav-dropdown"
@@ -73,4 +73,4 @@ const GlobalNavbar = () => {
   );
 };
 
-export default GlobalNavbar;
+export default HomeNavbar;
