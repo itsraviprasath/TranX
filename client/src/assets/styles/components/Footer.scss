@@ -1,0 +1,29 @@
+#footer {
+    background-color: #060836;
+    color: #fff;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin: 15px auto;
+    }
+
+    .link-heading {
+        font-weight: 700;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+
+    .copywrite {
+        border-top: 1px solid #272955;
+        text-align: center;
+        padding-top: 20px;
+        margin-top: 50px;
+    }
+}
