@@ -33,6 +33,16 @@ const login = async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: "1h" }
           );
+          console.log(token);
+          // jwt.sign(
+          //   { id: user._id, name: user.name, email: user.email },
+          //   process.env.JWT_SECRET,
+          //   { expiresIn: "1h" },
+          //   (err, token) => {
+          //     if (err) throw err;
+          //     res.cookie("token", token).json(user);
+          //   }
+          // );
           res.status(200).send({ message: "Login Successful" });
           console.log("Login Successful");
         } else {
