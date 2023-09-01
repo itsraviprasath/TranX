@@ -1,0 +1,42 @@
+#profileNav {
+    background-color: #fff;
+    position: relative;
+    border-bottom: 1px solid #e1e1e1;
+
+    .nav-logo {
+        width: 70px;
+        height: 50px;
+        margin-right: 50px;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        right: 120px;
+
+    }
+
+    .nav-link {
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .nav-dropdown {
+        margin: 0;
+    }
+
+    .profile-icon {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: inherit;
+    }
+}

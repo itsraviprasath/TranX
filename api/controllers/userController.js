@@ -43,7 +43,7 @@ const login = async (req, res) => {
           //     res.cookie("token", token).json(user);
           //   }
           // );
-          res.status(200).send({ message: "Login Successful" });
+          res.status(200).json(user);
           console.log("Login Successful");
         } else {
           res.status(401).send({ message: "Invalid Credentials" });
