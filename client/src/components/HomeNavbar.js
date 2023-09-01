@@ -12,7 +12,7 @@ import { FiLogIn } from "react-icons/fi";
 const HomeNavbar = () => {
   return (
     <>
-      <Navbar expand="lg" className="nav">
+      <Navbar expand="lg" id="homeNav">
         <Container>
           <Navbar.Brand>
             <img className="nav-logo" src={Logo} alt="logo" />

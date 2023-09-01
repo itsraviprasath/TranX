@@ -25,8 +25,8 @@ const Login = () => {
         localStorage.setItem("Data", res);
 
         if (result.data.login !== "false") {
-          navigate("/home");
-          document.location.reload();
+          navigate("/profile");
+          // document.location.reload();
         } else {
           setErrorMsg(result.data.message);
         }
@@ -65,10 +65,10 @@ const Login = () => {
           <button className="btn" type="submit">
             Login
           </button>
-          <p>
-            Don't have an account? <Link to="/register">Register</Link>
-          </p>
         </form>
+        <p>
+          Don't have an account? <Link to="/register">Register</Link>
+        </p>
       </section>
       <Footer />
     </>

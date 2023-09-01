@@ -19,12 +19,14 @@ const Register = () => {
       .post(`http://localhost:8000/api/users/register`, {
         name: name,
         phone: phone,
+        email: email,
+        password: password,
       })
       .then((result) => {
         const res = JSON.stringify(result.data);
         localStorage.setItem("Data", res);
-        navigate("/dashboard");
-        document.location.reload();
+        navigate("/profile");
+        // document.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -76,10 +78,10 @@ const Register = () => {
           <button className="btn" type="submit">
             Register
           </button>
-          <p>
-            Already have an account? <Link to="/login">Login</Link>
-          </p>
         </form>
+        <p>
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
       </section>
       <Footer />
     </>
