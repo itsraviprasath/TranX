@@ -16,13 +16,18 @@
     }
 
     .nav-link {
-        color: #000;
+        color: #2D3079;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0 10px;
         font-size: 1rem;
         font-weight: 500;
+        padding-bottom: 0;
+    }
+
+    .active-nav-link {
+        border-bottom: 2px solid #2D3079;
     }
 
     .nav-dropdown {
@@ -31,6 +36,12 @@
 
     .profile-icon {
         font-size: 1.5rem;
+    }
+
+    .name {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: auto 0 auto 10px;
     }
 
     .btn {
