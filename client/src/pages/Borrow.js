@@ -7,6 +7,42 @@ import Col from "react-bootstrap/Col";
 import Input from "../components/Input";
 
 const Borrow = () => {
+  const [amount, setAmount] = React.useState(0);
+  const [interest, setInterest] = React.useState(0);
+  const [description, setDescription] = React.useState("");
+  const [repayment, setRepayment] = React.useState("monthly");
+  const [collateral, setCollateral] = React.useState("");
+  const [streetName, setStreetName] = React.useState("");
+  const [landmark, setLandmark] = React.useState("");
+  const [town, setTown] = React.useState("");
+  const [district, setDistrict] = React.useState("");
+  const [pincode, setPincode] = React.useState("");
+  const [aadhaarNumber, setAadhaarNumber] = React.useState("");
+  const [panNumber, setPanNumber] = React.useState("");
+  const [memberCount, setMemberCount] = React.useState(0);
+  const [occupation, setOccupation] = React.useState("");
+  const [dummy, setDummy] = React.useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(
+      amount,
+      interest,
+      description,
+      repayment,
+      collateral,
+      streetName,
+      landmark,
+      town,
+      district,
+      pincode,
+      aadhaarNumber,
+      panNumber,
+      memberCount,
+      occupation,
+      dummy
+    );
+  };
   return (
     <>
       <ProfileNavbar />
@@ -27,6 +63,8 @@ const Borrow = () => {
                   name="amount"
                   type="number"
                   placeholder="50000"
+                  value={amount}
+                  onChange={(e) => setAmount(e.target.value)}
                 />
 
                 <Input
@@ -36,6 +74,8 @@ const Borrow = () => {
                   name="interest"
                   type="number"
                   placeholder="10"
+                  value={interest}
+                  onChange={(e) => setInterest(e.target.value)}
                 />
 
                 <Input
@@ -45,10 +85,17 @@ const Borrow = () => {
                   name="description"
                   type="text"
                   placeholder="I need money for my business"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 />
 
                 <label htmlFor="repayment">Repayment Method </label>
-                <select id="repayment" name="repayment">
+                <select
+                  id="repayment"
+                  name="repayment"
+                  value={repayment}
+                  onChange={setRepayment}
+                >
                   <option value="monthly">Monthly</option>
                   <option value="quarterly">Quarterly</option>
                   <option value="half-yearly">Half-Yearly</option>
@@ -62,6 +109,8 @@ const Borrow = () => {
                   name="collateral"
                   type="text"
                   placeholder="House"
+                  value={collateral}
+                  onChange={(e) => setCollateral(e.target.value)}
                 />
               </Col>
               {/* Address Details */}
@@ -75,6 +124,8 @@ const Borrow = () => {
                   name="streetName"
                   type="text"
                   placeholder="9/1, 1st Street"
+                  value={streetName}
+                  onChange={(e) => setStreetName(e.target.value)}
                 />
 
                 <Input
@@ -84,6 +135,8 @@ const Borrow = () => {
                   name="landmark"
                   type="text"
                   placeholder="Near Bus Stop"
+                  value={landmark}
+                  onChange={(e) => setLandmark(e.target.value)}
                 />
 
                 <Input
@@ -93,6 +146,8 @@ const Borrow = () => {
                   name="town"
                   type="text"
                   placeholder="Sriramapuram"
+                  value={town}
+                  onChange={(e) => setTown(e.target.value)}
                 />
 
                 <Input
@@ -102,6 +157,7 @@ const Borrow = () => {
                   name="district"
                   type="text"
                   placeholder="Dindigul"
+                  value={district}
                 />
 
                 <Input
@@ -111,6 +167,8 @@ const Borrow = () => {
                   name="pincode"
                   type="number"
                   placeholder="624622"
+                  value={pincode}
+                  onChange={(e) => setPincode(e.target.value)}
                 />
               </Col>
               <Col className="person-details">
@@ -123,6 +181,8 @@ const Borrow = () => {
                   name="aadhaarNumber"
                   type="number"
                   placeholder="331520087298"
+                  value={aadhaarNumber}
+                  onChange={(e) => setAadhaarNumber(e.target.value)}
                 />
 
                 <Input
@@ -132,6 +192,8 @@ const Borrow = () => {
                   name="panNumber"
                   type="text"
                   placeholder="CCXPS1234X"
+                  value={panNumber}
+                  onChange={(e) => setPanNumber(e.target.value)}
                 />
 
                 <Input
@@ -141,6 +203,8 @@ const Borrow = () => {
                   name="memberCount"
                   type="number"
                   placeholder="5"
+                  value={memberCount}
+                  onChange={(e) => setMemberCount(e.target.value)}
                 />
 
                 <Input
@@ -150,6 +214,8 @@ const Borrow = () => {
                   name="occupation"
                   type="text"
                   placeholder="Driver"
+                  value={occupation}
+                  onChange={(e) => setOccupation(e.target.value)}
                 />
 
                 <Input
@@ -159,6 +225,8 @@ const Borrow = () => {
                   name="dummy"
                   type="text"
                   placeholder="Dummy"
+                  value={dummy}
+                  onChange={(e) => setDummy(e.target.value)}
                 />
               </Col>
             </Row>
@@ -169,7 +237,7 @@ const Borrow = () => {
               I declare all details are correct.
             </label>
           </div>
-          <button className="btn" type="submit">
+          <button className="btn" type="submit" onSubmit={handleSubmit}>
             Submit
           </button>
         </form>
