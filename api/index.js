@@ -6,6 +6,7 @@ const cokieParser = require("cookie-parser");
 const app = express(); // create express app
 const connectDb = require("./db/db"); // import db connection
 const userRoute = require("./routes/userRoute");
+const burrowRoute = require("./routes/burrowRoute");
 
 connectDb(); // connect to db
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true })); // parse urlencoded bodies
 
 //routes
 app.use("/api/users", userRoute);
+app.use("/api",burrowRoute)
 
 
 
