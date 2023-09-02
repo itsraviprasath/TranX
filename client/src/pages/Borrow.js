@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Input from "../components/Input";
+import axios from "axios";
 
 const Borrow = () => {
   const [amount, setAmount] = React.useState(0);
@@ -21,27 +22,49 @@ const Borrow = () => {
   const [panNumber, setPanNumber] = React.useState("");
   const [memberCount, setMemberCount] = React.useState(0);
   const [occupation, setOccupation] = React.useState("");
-  const [dummy, setDummy] = React.useState("");
+  const [income, setIncome] = React.useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(
-      amount,
-      interest,
-      description,
-      repayment,
-      collateral,
-      streetName,
-      landmark,
-      town,
-      district,
-      pincode,
-      aadhaarNumber,
-      panNumber,
-      memberCount,
-      occupation,
-      dummy
-    );
+    console.log("Hello");
+    axios
+      .post(`http://localhost:8000/burrow`, {
+        amount: amount,
+        interest: interest,
+        description: description,
+        repayment: repayment,
+        collateral: collateral,
+        streetName: streetName,
+        landmark: landmark,
+        town: town,
+        district: district,
+        pincode: pincode,
+        aadhaarNumber: aadhaarNumber,
+        panNumber: panNumber,
+        memberCount: memberCount,
+        occupation: occupation,
+        income: income,
+      })
+      .then((res) => {
+        console.log("Success");
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+    setAmount(0);
+    setInterest(0);
+    setDescription("");
+    setRepayment("monthly");
+    setCollateral("");
+    setStreetName("");
+    setLandmark("");
+    setTown("");
+    setDistrict("");
+    setPincode("");
+    setAadhaarNumber("");
+    setPanNumber("");
+    setMemberCount(0);
+    setOccupation("");
+    setIncome(0);
   };
   return (
     <>
@@ -158,6 +181,7 @@ const Borrow = () => {
                   type="text"
                   placeholder="Dindigul"
                   value={district}
+                  onChange={(e) => setDistrict(e.target.value)}
                 />
 
                 <Input
@@ -219,14 +243,14 @@ const Borrow = () => {
                 />
 
                 <Input
-                  labelFor="dummy"
-                  label="Dummy"
-                  id="dummy"
-                  name="dummy"
-                  type="text"
-                  placeholder="Dummy"
-                  value={dummy}
-                  onChange={(e) => setDummy(e.target.value)}
+                  labelFor="income"
+                  label="Income (₹)"
+                  id="income"
+                  name="income"
+                  type="number"
+                  placeholder="1000000"
+                  value={income}
+                  onChange={(e) => setIncome(e.target.value)}
                 />
               </Col>
             </Row>
@@ -237,7 +261,7 @@ const Borrow = () => {
               I declare all details are correct.
             </label>
           </div>
-          <button className="btn" type="submit" onSubmit={handleSubmit}>
+          <button className="btn" type="submit" onClick={handleSubmit}>
             Submit
           </button>
         </form>
