@@ -38,10 +38,8 @@ const createBurrow = async (req, res) => {
       income,
     });
     const savedBurrow = await newBurrow.save();
-    res
-      .status(201)
-      .json(savedBurrow)
-      .send({ message: "Burrow Created Successfully" });
+    res.status(201).json(savedBurrow);
+    console.log(savedBurrow);
   } catch (error) {
     res.status(500).send({ message: "Internal Server Error" });
     console.log(error);
