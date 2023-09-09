@@ -29,7 +29,10 @@ const HomeNavbar = () => {
               <Link className="nav-link" to="/borrow">
                 Borrow
               </Link>
-              <NavDropdown
+              <Link className="nav-link" to="/">
+                Complain
+              </Link>
+              {/* <NavDropdown
                 className="nav-link nav-dropdown"
                 title="Loans"
                 id="basic-nav-dropdown"
@@ -43,7 +46,7 @@ const HomeNavbar = () => {
                 <NavDropdown.Item>
                   <Link to="">Three</Link>
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
               {/* <NavDropdown
                 className="nav-link nav-dropdown"
                 title="More"
