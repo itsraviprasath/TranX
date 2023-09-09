@@ -9,6 +9,9 @@ import { CgProfile } from "react-icons/cg";
 import "../assets/styles/components/ProfileNavbar.scss";
 
 const ProfileNavbar = () => {
+  const data = JSON.parse(localStorage.getItem("Data"));
+  console.log(data);
+
   return (
     <>
       <Navbar expand="lg" id="profileNav">
@@ -19,9 +22,6 @@ const ProfileNavbar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="navbar-collapse">
             <Nav className="me-auto">
-              <Link className="nav-link" to="/dashboard">
-                Dashboard
-              </Link>
               <Link className="nav-link" to="/lend">
                 Lend
               </Link>
@@ -30,7 +30,12 @@ const ProfileNavbar = () => {
               </Link>
               <NavDropdown
                 className="nav-link nav-dropdown"
-                title={<CgProfile className="profile-icon" />}
+                title={
+                  <>
+                    <CgProfile className="profile-icon" />{" "}
+                    <span className="name">{data.name}</span>
+                  </>
+                }
                 id="basic-nav-dropdown"
               >
                 <NavDropdown.Item>
