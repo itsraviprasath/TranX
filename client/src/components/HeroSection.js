@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-// import Image from "../assets/images/image.png";
+import Banner_Image from "../assets/images/banner-home.png";
 
 const HeroSection = () => {
   return (
@@ -37,7 +37,7 @@ const HeroSection = () => {
             </Button>
           </Col>
           <Col>
-            <img src={""} alt="" />
+            <img className="hero-img" src={Banner_Image} alt="" />
           </Col>
         </Row>
       </Container>
